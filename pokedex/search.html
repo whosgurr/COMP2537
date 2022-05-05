@@ -11,22 +11,31 @@
 
 
     <body>
+    <div id="outer">
+        <header>
+            <h1>
+                PokeDex
+            </h1>
+        </header>
+        
+        <nav>
+            <div id="dummy_div" >
+                <li><a href="./index.html">Home</a></li>
+                <input type="text" id="search_input" value="">
+                <input type="submit" id="get_search" value="Search">
+            </div>
 
-        <nav class="headline">
-            <br>    
         </nav>
 
-        <div class="search">
-            <input type="text" id="search_input" value="">
-            <input type="submit" id="get_search" value="Search">
+        <div class="images_group">
+            <div class="image_container">
+                <img id="search_sprite"></img>
+                <h4 id="search_pokemon_name"></h4>
+                <type1 id="search_pokemon_type1"></type1>
+                <type2 id="search_pokemon_type2"></type2>
+            </div>
         </div>
-
-        <img id="search_sprite"></img>
-        <p id="search_pokemon_name"></p>
-        <p id="search_pokemon_type1"></p>
-        <p id="search_pokemon_type2"></p>
-
-
+    </div>
     </body>
 
 </html>

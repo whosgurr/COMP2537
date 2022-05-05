@@ -1,14 +1,14 @@
 function process_(data){
     type_num = data.types
-    jQuery("#search_pokemon_name").html(data.name)
-    jQuery("#search_pokemon_type1").html(data.types[0].type.name);
+    $("#search_pokemon_name").html(data.name)
+    $("#search_pokemon_type1").html(data.types[0].type.name);
     if (type_num.length > 1)
-        jQuery("#search_pokemon_type2").html(data.types[1].type.name);
+        $("#search_pokemon_type2").html(data.types[1].type.name);
 }
 
 function ajax_get(){
 
-    y = jQuery("#search_input").val()
+    y = $("#search_input").val()
     $.ajax(
 
         {

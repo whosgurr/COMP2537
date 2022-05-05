@@ -3,15 +3,15 @@ counter = 0
 function process_(data){
     console.log(data)
     type_num = data.types
-    jQuery(`#pokemon_name${counter}`).html(data.name)
-    jQuery(`#pokemon_type1_${counter}`).html(data.types[0].type.name);
+    $(`#pokemon_name${counter}`).html(data.name)
+    $(`#pokemon_type1_${counter}`).html(data.types[0].type.name);
     if (type_num.length > 1)
-        jQuery(`#pokemon_type2_${counter}`).html(data.types[1].type.name);
+        $(`#pokemon_type2_${counter}`).html(data.types[1].type.name);
 
     // jQuery('#pokemon_description').html(data.);
     x = data.id;
     console.log(x)
-    jQuery(`#sprite_${counter}`).attr("src", `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${x}.png`);
+    $(`#sprite_${counter}`).attr("src", `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${x}.png`);
     counter++
     console.log(counter)
 }
@@ -32,7 +32,7 @@ function main_load(){
 
 function ajax_get(){
 
-    y = jQuery("#search_input").val()
+    y = $("#search_input").val()
     $.ajax(
 
         {
