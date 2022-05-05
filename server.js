@@ -11,5 +11,10 @@ app.get('/', function(req,res){
 })
 
 app.get('/pokemon/:id', function(req,res){
-    res.send(`Pokemon # ${req.params.id}`)
+    // res.write(`Pokemon # ${req.params.id}`)
+    // res.send();
+    res.render("pokemon.ejs", {
+        "id": req.params.id
+    });
+    
 })
