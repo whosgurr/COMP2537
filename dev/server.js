@@ -31,21 +31,59 @@ app.get('/pokemon/:id', function (req, res) {
         https_res.on("end", function () {
             data = JSON.parse(data)
 
-            z  = data.stats.filter(function (obj){
+            a  = data.stats.filter(function (obj){
                 return obj.stat.name == "hp"
             }).map((obj2)=>{
                 return obj2.base_stat
             })
-            // console.log(t)
-            res.render("pokemon.ejs", {
+            
+
+            res.render("profile.ejs", {
                 "id": req.params.id,
-                "name": data.name,
-                "hp": z[0]// data.stats[0].stat.name
+                "name": "name",
+                "hp": 200, // data.stats[0].stat.name
+                "attack": a[0],
+                // "defense": c[2],
+                // "special-attack":d[3],
+                // "special-defense":e[4],
+                // "speed":f[5]
+                
             });
         })
     });
 
 
 })
+
+
+    // b  = data.stats.filter(function (obj){
+    //     return obj.stat.name == "attack"
+    // }).map((obj2)=>{
+    //     return obj2.base_stat
+    // }),
+
+    // c  = data.stats.filter(function (obj){
+    //     return obj.stat.name == "defense"
+    // }).map((obj2)=>{
+    //     return obj2.base_stat
+    // }),
+
+    // d  = data.stats.filter(function (obj){
+    //     return obj.stat.name == "special-attack"
+    // }).map((obj2)=>{
+    //     return obj2.base_stat
+    // }),
+
+    // e  = data.stats.filter(function (obj){
+    //     return obj.stat.name == "special-defense"
+    // }).map((obj2)=>{
+    //     return obj2.base_stat
+    // }),
+
+    // f  = data.stats.filter(function (obj){
+    //     return obj.stat.name == "speed"
+    // }).map((obj2)=>{
+    //     return obj2.base_stat
+    // }),
 
 app.use(express.static('./public'));

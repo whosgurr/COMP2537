@@ -1,4 +1,3 @@
-typing = ''
 to_add  = ''
 // function typeProcess(data){
 //     for(i =0 ; i < data.types.length; i++)
@@ -51,36 +50,67 @@ function getDesc(data){
     $("#search_desc").html(data.flavor_text_entries[2].flavor_text)
 }
 
-// function display(typing){
-//     typing = $("#type_select").val()
-    // for(i = 1 ; i < 100, i++;) {
-//         $.ajax(
-//             {
-//                 "url":`https://pokeapi.co/api/v2/pokemon/${i}`,
-//                 "type": "GET",
-//                 "success": type_search
-//             })
-//         }
+function getTypeSearch(data){
+    type_num = data.types
+    // console.log(to_add)
+    to_add += `
+    <div class="image_container">
+    <a href="/profile/${data.id}">  
+        <img src="${data.sprites.other["official-artwork"].front_default}">
+        <h4>"${data.name}"</h4>
+        <type1>${data.types[0].type.name}</type1>`
 
-// }
+    if (type_num.length > 1)
+    to_add += `
+        <type2>${data.types[1].type.name}</type2>
+        <br>
+        </a>
+        </div>`
+    
 
-function dropdown(){
-    for(i = 1 ; i < 100, i++;)
-        type_select = $("#type_select option:selected").val();
-            $.ajax(
-            {  
-                    
-                "url":`https://pokeapi.co/api/v2/pokemon/${i}`,
-                "type": "GET",
-                "success": type_search
-            })
+    jQuery("main").html(to_add)
 
 }
 
-function type_search(data, type_select){
+
+function dropdown(){
+
     type_select = $("#type_select option:selected").val();
-    if (data.types[i].type.name == type_select)
-        $("search_pokemon_name").html(data.name)
+
+        $.ajax(
+        {  
+                
+            "url":`https://pokeapi.co/api/v2/type/${type_select}`,
+            "type": "GET",
+            "success": type_search
+        })
+
+}
+
+function type_search(data){
+    type_select = $("#type_select option:selected").val();
+    console.log(data)
+    // console.log(type_select)
+    
+    data.pokemon.forEach((element,i) => {
+        // console.log(element)
+        if (i % 3 == 0) {
+            to_add += `<div class="images_group">`
+        }
+        
+        $.ajax(
+            {
+                "url":`${element.pokemon.url}`,
+                "type": "GET",
+                "success": getTypeSearch
+            })
+
+        if (i % 3 == 1) { 
+            to_add += `</div>`
+        }
+        // jQuery("main").html(to_add)
+
+    })
 }
 
 function input_search(){
@@ -97,16 +127,14 @@ function input_search(){
   }
 
 
-
-
 function setup(){
     counter = 0
       console.log('s');
     $('#get_search').click(input_search);
     $("#type_select").change(()=>{
-        dropdown
         // type_select = $("#type_select option:selected").val();
         // alert(type_select)
+        dropdown()
     });
 }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokemon Profile</title>
 </head>
 
 <body>
@@ -13,17 +13,29 @@
         <br>
 
 
-        This Pokemon  id: <%= id %>
+        PokeID: <%= id %>
         <br>
-        This Pokemon  id: <%= name %>
+        Name: <%= name %>
 
         <br>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= id %>.png" alt="">
         <br>
-        Stats.
-        The HP is  
-        <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+        Stats
+        <div>
+            <div>HP</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+            <div>Attack</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+            <div>Defence</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+            <div>Special Attack</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+            <div>Special Defence</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+            <div>Speed</div>
+                <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
 
+        </div>
 
        
     </h1>
