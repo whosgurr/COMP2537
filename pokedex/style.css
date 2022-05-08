@@ -68,6 +68,7 @@ nav a:hover {
 }
 
 .images_group {
+    padding-left:10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -104,6 +105,15 @@ header {
 }
 
 #search_sprite{
-    height: auto;
-    width: 20%;
+    height: 30%;
+    width: 30%;
+}
+#images_group{
+
+    
+}
+
+#stats{
+    padding-left:10px;
+    margin-left:10px
 }
