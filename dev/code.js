@@ -32,7 +32,7 @@ function process_(data){
 }
 
 function main_load(){
-  y = Math.ceil(Math.random() * 150)
+  y = Math.ceil(Math.random() * 600)
   $.ajax(
 
     {
@@ -40,6 +40,7 @@ function main_load(){
         "type": "GET",
         "success": process_
     })
+    
 
   }
 
@@ -87,15 +88,8 @@ function ajax_get(){
     counter = 0
       console.log('s');
     // loadNineImages();
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
-    main_load()
+    for (i = 1; i <= 10; i++)
+      main_load()
   }
+  
   $(document).ready(setup);

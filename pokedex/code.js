@@ -9,8 +9,6 @@ function processPokeResp(data){
       <type2 "${data.types[1].type.name}"></type2>
       </a>
       </div>`
-    //   <type1 "${data.types[0].type.name}"></type1>
-    //   <type2 "${data.types[1].type.name}"></type1>
 }
 
 async function loadNineImages() {
