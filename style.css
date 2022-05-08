@@ -112,4 +112,8 @@ header {
     display: flex;
 }
 
-
+#search_sprite{
+    height: auto;
+    width: 10%;
+    contain: content;
+}

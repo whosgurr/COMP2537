@@ -25,18 +25,18 @@ function main_load(){
         "url":`https://pokeapi.co/api/v2/pokemon/${y}`,
         "type": "GET",
         "success": process_
-    }
+    })
   
-    )
-    for (i = 1; i <= 9; i++) {
-      if(i % 3 == 1)
-        add += `<div class="images_group>`
-        add += `<div class="image_container> <img src="https://pokeapi.co/api/v2/pokemon/${y}"<div>`
-      if (i % 3 == 0){
-        add+=`<div>`
-      }
-      $("main").html(add)
-    }
+    // )
+    // for (i = 1; i <= 9; i++) {
+    //   if(i % 3 == 1)
+    //     add += `<div class="images_group>`
+    //     add += `<div class="image_container> <img src="https://pokeapi.co/api/v2/pokemon/${y}"<div>`
+    //   if (i % 3 == 0){
+    //     add+=`<div>`
+    //   }
+    //   $("main").html(add)
+    // }
 
   }
 
@@ -60,14 +60,14 @@ function ajax_get(){
     counter = 0
       console.log('s');
     main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
-    // main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
+    main_load()
   }
   $(document).ready(setup);
