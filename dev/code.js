@@ -32,7 +32,6 @@ function process_(data){
 }
 
 function main_load(){
-  add = ''
   y = Math.ceil(Math.random() * 150)
   $.ajax(
 

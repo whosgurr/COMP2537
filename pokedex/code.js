@@ -5,8 +5,12 @@ function processPokeResp(data){
       <div class="image_container">
       <a href="/profile/${data.id}">  
       <img src="${data.sprites.other["official-artwork"].front_default}">
+      <type1 "${data.types[0].type.name}"></type1>
+      <type2 "${data.types[1].type.name}"></type2>
       </a>
       </div>`
+    //   <type1 "${data.types[0].type.name}"></type1>
+    //   <type2 "${data.types[1].type.name}"></type1>
 }
 
 async function loadNineImages() {

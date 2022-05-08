@@ -2,7 +2,7 @@ const express = require('express')
 const app =  express()
 app.set('view engine', 'ejs');
 
-app.listen(5001, function(err){
+app.listen(process.env.PORT || 5001, function (err){
     if (err) 
         console.log(err);
 })
@@ -11,15 +11,41 @@ app.listen(5001, function(err){
 //     res.send('GET request to homepage')
 // })
 
-app.get('/pokemon/:id', function(req,res){
-    // res.write(`Pokemon # ${req.params.id}`)
-    // res.send();
-    res.render("pokemon.ejs", {
-        "id": req.params.id
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + "/index.html");
+  })
+
+
+const https = require('https');
+
+
+app.get('/pokemon/:id', function (req, res) {
+
+    const url = `https://pokeapi.co/api/v2/pokemon/${req.params.id}`
+    data = ""
+    https.get(url, function (https_res) {
+        https_res.on("data", function (chunk) {
+           data += chunk
+        })
+
+        https_res.on("end", function () {
+            data = JSON.parse(data)
+
+            z  = data.stats.filter(function (obj){
+                return obj.stat.name == "hp"
+            }).map((obj2)=>{
+                return obj2.base_stat
+            })
+            // console.log(t)
+            res.render("pokemon.ejs", {
+                "id": req.params.id,
+                "name": data.name,
+                "hp": z[0]// data.stats[0].stat.name
+            });
+        })
     });
-    
+
+
 })
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + "/index.html")
-})
+app.use(express.static('./public'));

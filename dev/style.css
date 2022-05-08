@@ -109,6 +109,7 @@ header {
 
 #dummy_div{
     display: flex;
+    align-content: center;
 }
 
 #search_sprite{
