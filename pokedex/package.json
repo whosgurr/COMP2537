@@ -1,0 +1,26 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whosgurr/COMP2800.git"
+  },
+  "author": "Yuen Wai Mo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whosgurr/COMP2800/issues"
+  },
+  "homepage": "https://github.com/whosgurr/COMP2800#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "node": "^17.7.2",
+    "pug": "^3.0.2"
+  }
+}

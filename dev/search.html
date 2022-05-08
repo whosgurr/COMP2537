@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="search.js"></script>
+    <title>PokeDex</title>
+
+    </head>
+
+
+    <body>
+    <div id="outer">
+        <header>
+            <h1>
+                PokeDex
+            </h1>
+        </header>
+        
+        <nav>
+            <div id="dummy_div" >
+                <li><a href="./index.html">Home</a></li>
+                <input type="text" id="search_input" value="">
+                <select id="type_select" name="type">
+                    <option value="normal">Normal</option>
+                    <option value="electric">Electric</option>
+                    <option value="grass">Grass</option>
+                    <option value="fire">Fire</option>
+                    <option value="bug">Bug</option>
+                    <option value="ghost">Ghost</option>
+                    <option value="water">Water</option>
+                </select>
+                <input type="submit" id="get_search" value="Search">
+
+            </div>
+
+        </nav>
+
+        <div class="images_group">
+            <div class="image_container">
+                <a href="profile/data">
+                    <img id="search_sprite"></img>
+                </a>
+                <h4 id="search_pokemon_name"></h4>
+                <type1 id="search_pokemon_type1"></type1>
+                <type2 id="search_pokemon_type2"></type2>
+            </div>
+            <!-- <div class="description">
+                <h5 id="search_desc"></h5>
+            </div> -->
+        </div>
+    </div>
+    </body>
+
+</html>
