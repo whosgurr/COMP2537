@@ -20,7 +20,7 @@ function process_(data){
         $("#search_pokemon_type2").html(data.types[1].type.name);
     else
         $("#search_pokemon_type2").html("");
-    // $("#search_desc").html(data.species.url)
+    $("#search_desc").html(data.species.url)
         console.log(data)
 }
 
